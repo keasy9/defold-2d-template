@@ -1,0 +1,5 @@
+font: "/assets/fonts/8-bit.otf"
+material: "/builtins/fonts/font.material"
+size: 100
+antialias: 0
+characters: " !\"#$%&\'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~"

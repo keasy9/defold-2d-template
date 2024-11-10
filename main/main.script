@@ -1,0 +1,9 @@
+proxy = require('modules.proxy')
+
+function init(self)
+	msg.post("@render:", "use_fixed_projection", { zoom = 4 })
+
+	msg.post(".", "acquire_input_focus")
+
+	proxy:show('mainMenuProxy')
+end

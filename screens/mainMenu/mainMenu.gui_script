@@ -1,0 +1,19 @@
+local btn = require('modules.gui.button')
+
+function init(self)
+	msg.post('.', 'acquire_input_focus')
+
+	self.btns = {
+		play = btn.create('playButton'),
+		settings = btn.create('settingsButton'),
+		exit = btn.create('exitButton'):setOnClick(function (s, action) msg.post("@system:", "exit", {code = 0}) end),
+	}
+end
+
+function on_input(self, actionId, action)
+	if self.btns then
+		self.btns.play:onInput(actionId, action)
+		self.btns.settings:onInput(actionId, action)
+		self.btns.exit:onInput(actionId, action)
+	end
+end
