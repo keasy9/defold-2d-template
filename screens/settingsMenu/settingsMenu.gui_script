@@ -1,0 +1,29 @@
+local btn = require('modules.gui.button')
+
+local testSetting = nil;
+
+local function incrementTestSetting()
+	testSetting = testSetting + 1
+	gui.set_text(gui.get_node('testButton/text'), testSetting)
+end
+
+function init(self)
+	msg.post('.', 'acquire_input_focus')
+
+	testSetting = SETTINGS:load()['testSetting']
+	gui.set_text(gui.get_node('testButton/text'), testSetting)
+
+	self.btns = {
+		back = btn.create('backButton'):setOnClick(function (s, action) SCREEN.show('mainMenuProxy') end),
+		save = btn.create('saveButton'):setOnClick(function (s, action) SETTINGS:save({testSetting = testSetting}) end),
+		test = btn.create('testButton'):setOnClick(incrementTestSetting),
+	}
+end
+
+function on_input(self, actionId, action)
+	if self.btns then
+		self.btns.back:onInput(actionId, action)
+		self.btns.save:onInput(actionId, action)
+		self.btns.test:onInput(actionId, action)
+	end
+end

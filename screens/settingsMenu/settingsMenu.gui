@@ -1,0 +1,139 @@
+script: "/screens/settingsMenu/settingsMenu.gui_script"
+nodes {
+  position {
+    x: 640.0
+    y: 360.0
+  }
+  size {
+    x: 1280.0
+    y: 720.0
+  }
+  color {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  type: TYPE_BOX
+  id: "menu"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    y: -1.0
+  }
+  type: TYPE_TEMPLATE
+  id: "testButton"
+  parent: "menu"
+  inherit_alpha: true
+  template: "/guiTemplates/button.gui"
+}
+nodes {
+  type: TYPE_BOX
+  id: "testButton/button"
+  parent: "testButton"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_TEXT
+  id: "testButton/text"
+  parent: "testButton/button"
+  template_node_child: true
+}
+nodes {
+  position {
+    y: -66.0
+  }
+  size {
+    x: 400.0
+    y: 50.0
+  }
+  color {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  type: TYPE_BOX
+  id: "buttonContainer"
+  parent: "menu"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 205.0
+    y: 3.0
+  }
+  type: TYPE_TEMPLATE
+  id: "saveButton"
+  parent: "buttonContainer"
+  inherit_alpha: true
+  template: "/guiTemplates/button.gui"
+}
+nodes {
+  position {
+    x: -100.0
+    y: -3.0
+  }
+  size {
+    x: 190.0
+    y: 50.0
+  }
+  type: TYPE_BOX
+  id: "saveButton/button"
+  parent: "saveButton"
+  overridden_fields: 1
+  overridden_fields: 4
+  template_node_child: true
+}
+nodes {
+  size {
+    x: 450.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "SAVE"
+  id: "saveButton/text"
+  parent: "saveButton/button"
+  overridden_fields: 4
+  overridden_fields: 8
+  overridden_fields: 45
+  overridden_fields: 46
+  template_node_child: true
+}
+nodes {
+  position {
+    x: -105.0
+  }
+  type: TYPE_TEMPLATE
+  id: "backButton"
+  parent: "buttonContainer"
+  inherit_alpha: true
+  template: "/guiTemplates/button.gui"
+}
+nodes {
+  size {
+    x: 190.0
+    y: 50.0
+  }
+  type: TYPE_BOX
+  id: "backButton/button"
+  parent: "backButton"
+  overridden_fields: 4
+  template_node_child: true
+}
+nodes {
+  size {
+    x: 450.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "BACK"
+  id: "backButton/text"
+  parent: "backButton/button"
+  overridden_fields: 4
+  overridden_fields: 8
+  template_node_child: true
+}
+material: "/builtins/materials/gui.material"
+adjust_reference: ADJUST_REFERENCE_PARENT

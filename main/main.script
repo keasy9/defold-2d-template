@@ -1,9 +1,31 @@
-proxy = require('modules.proxy')
+SCREEN = require('modules.screen')
+SETTINGS = require('modules.settings')
+
+local function show(self, proxy)
+	if self.currentProxy then
+		msg.post(self.currentProxy, 'disable')
+		msg.post(self.currentProxy, 'final')
+		msg.post(self.currentProxy, 'unload')
+	end
+
+	self.currentProxy = '#' .. proxy
+	msg.post(self.currentProxy, 'async_load')
+end
 
 function init(self)
 	msg.post("@render:", "use_fixed_projection", { zoom = 4 })
 
 	msg.post(".", "acquire_input_focus")
 
-	proxy:show('mainMenuProxy')
+	self.currentProxy = nil
+	SCREEN.show('mainMenuProxy')
+end
+
+function on_message(self, messageId, message, sender)
+	if messageId == hash('proxy_loaded') then
+		msg.post(sender, 'init')
+		msg.post(sender, 'enable')
+	elseif messageId == hash('load_proxy') then
+		show(self, message.proxy)
+	end
 end

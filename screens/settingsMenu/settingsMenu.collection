@@ -1,0 +1,10 @@
+name: "settingsMenu"
+scale_along_z: 0
+embedded_instances {
+  id: "controller"
+  data: "components {\n"
+  "  id: \"settingsMenu\"\n"
+  "  component: \"/screens/settingsMenu/settingsMenu.gui\"\n"
+  "}\n"
+  ""
+}

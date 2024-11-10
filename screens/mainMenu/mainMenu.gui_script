@@ -5,7 +5,7 @@ function init(self)
 
 	self.btns = {
 		play = btn.create('playButton'),
-		settings = btn.create('settingsButton'),
+		settings = btn.create('settingsButton'):setOnClick(function (s, action) SCREEN.show('settingsProxy') end),
 		exit = btn.create('exitButton'):setOnClick(function (s, action) msg.post("@system:", "exit", {code = 0}) end),
 	}
 end
