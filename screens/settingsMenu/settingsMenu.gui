@@ -20,28 +20,6 @@ nodes {
 }
 nodes {
   position {
-    y: -1.0
-  }
-  type: TYPE_TEMPLATE
-  id: "testButton"
-  parent: "menu"
-  inherit_alpha: true
-  template: "/guiTemplates/button.gui"
-}
-nodes {
-  type: TYPE_BOX
-  id: "testButton/button"
-  parent: "testButton"
-  template_node_child: true
-}
-nodes {
-  type: TYPE_TEXT
-  id: "testButton/text"
-  parent: "testButton/button"
-  template_node_child: true
-}
-nodes {
-  position {
     y: -66.0
   }
   size {
@@ -133,6 +111,51 @@ nodes {
   parent: "backButton/button"
   overridden_fields: 4
   overridden_fields: 8
+  template_node_child: true
+}
+nodes {
+  type: TYPE_TEMPLATE
+  id: "soundSlider"
+  parent: "menu"
+  inherit_alpha: true
+  template: "/guiTemplates/slider.gui"
+}
+nodes {
+  type: TYPE_BOX
+  id: "soundSlider/container"
+  parent: "soundSlider"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_TEXT
+  text: "SOUND"
+  id: "soundSlider/text"
+  parent: "soundSlider/container"
+  overridden_fields: 8
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
+  id: "soundSlider/slider"
+  parent: "soundSlider/container"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
+  id: "soundSlider/backdrop"
+  parent: "soundSlider/slider"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
+  id: "soundSlider/filler"
+  parent: "soundSlider/slider"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
+  id: "soundSlider/texture"
+  parent: "soundSlider/slider"
   template_node_child: true
 }
 material: "/builtins/materials/gui.material"

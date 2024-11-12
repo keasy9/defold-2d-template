@@ -1,29 +1,26 @@
 local btn = require('modules.gui.button')
+local sld = require('modules.gui.slider')
 
-local testSetting = nil;
-
-local function incrementTestSetting()
-	testSetting = testSetting + 1
-	gui.set_text(gui.get_node('testButton/text'), testSetting)
-end
+local sound = nil;
 
 function init(self)
 	msg.post('.', 'acquire_input_focus')
 
-	testSetting = SETTINGS:load()['testSetting']
-	gui.set_text(gui.get_node('testButton/text'), testSetting)
+	sound = SETTINGS:load()['sound']
 
-	self.btns = {
+	-- TODO: компонент для слайдера такой же как для кнопки, оживить слайдер звука и сохранять его значение в настройках
+
+	self.elems = {
 		back = btn.create('backButton'):setOnClick(function (s, action) SCREEN.show('mainMenuProxy') end),
-		save = btn.create('saveButton'):setOnClick(function (s, action) SETTINGS:save({testSetting = testSetting}) end),
-		test = btn.create('testButton'):setOnClick(incrementTestSetting),
+		save = btn.create('saveButton'):setOnClick(function (s, action) SETTINGS:save({sound = self.elems.sound:getValue()}) end),
+		sound = sld.create('soundSlider'):setValue(sound),
 	}
 end
 
 function on_input(self, actionId, action)
-	if self.btns then
-		self.btns.back:onInput(actionId, action)
-		self.btns.save:onInput(actionId, action)
-		self.btns.test:onInput(actionId, action)
+	if self.elems then
+		self.elems.back:onInput(actionId, action)
+		self.elems.save:onInput(actionId, action)
+		self.elems.sound:onInput(actionId, action)
 	end
 end

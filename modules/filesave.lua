@@ -8,8 +8,14 @@ function M.create(filename, defaultData)
 		__index = M,
 	})
 
-	if defaultData and not filesave:exists() then
-		filesave:save(defaultData)
+	if defaultData then
+		filesave.data = filesave:load()
+		
+		for k,v in pairs(defaultData) do
+			if not filesave.data[k] then
+				filesave.data[k] = v
+			end
+		end
 	end
 
 	return filesave

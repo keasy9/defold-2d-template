@@ -6,7 +6,7 @@ function M.init(self)
 	self.file = filesave.create('settings', {
 		-- defaults
 		
-		testSetting = 1,
+		sound = 0.5,
 	})
 end
 
