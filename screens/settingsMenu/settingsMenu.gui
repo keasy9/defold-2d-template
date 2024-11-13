@@ -20,7 +20,7 @@ nodes {
 }
 nodes {
   position {
-    y: -66.0
+    y: -92.0
   }
   size {
     x: 500.0
@@ -118,6 +118,9 @@ nodes {
   template_node_child: true
 }
 nodes {
+  position {
+    y: -26.0
+  }
   type: TYPE_TEMPLATE
   id: "soundSlider"
   parent: "menu"
@@ -164,7 +167,7 @@ nodes {
 }
 nodes {
   position {
-    y: 64.0
+    y: 38.0
   }
   type: TYPE_TEMPLATE
   id: "resolutionSelect"
@@ -219,6 +222,36 @@ nodes {
   overridden_fields: 3
   overridden_fields: 4
   overridden_fields: 8
+  template_node_child: true
+}
+nodes {
+  position {
+    y: 100.0
+  }
+  type: TYPE_TEMPLATE
+  id: "fullScreenCheckbox"
+  parent: "menu"
+  inherit_alpha: true
+  template: "/guiTemplates/checkbox.gui"
+}
+nodes {
+  type: TYPE_BOX
+  id: "fullScreenCheckbox/container"
+  parent: "fullScreenCheckbox"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_TEXT
+  text: "FULL SCREEN"
+  id: "fullScreenCheckbox/text"
+  parent: "fullScreenCheckbox/container"
+  overridden_fields: 8
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
+  id: "fullScreenCheckbox/box"
+  parent: "fullScreenCheckbox/container"
   template_node_child: true
 }
 material: "/builtins/materials/gui.material"

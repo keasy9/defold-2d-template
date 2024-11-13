@@ -8,6 +8,7 @@ function M.init(self)
 		
 		sound = 0.5,
 		resolution = '1280 x 720',
+		fullScreen = false,
 	})
 end
 

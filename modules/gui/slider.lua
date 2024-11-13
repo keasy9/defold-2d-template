@@ -50,7 +50,11 @@ function M.onInput(self, actionId, action)
 	elseif actionId == hash("touch") and action.pressed then
 		self.isPressed = true
 		if not setValueByTouch(self, actionId, action) and gui.pick_node(self.texture, action.x, action.y) then
-			local pos = gui.get_screen_position(self.texture);
+			local pos = gui.get_screen_position(self.texture); -- не будет работать после ресайза окна или на устройствах с другим разрешением
+			-- чтобы исправить надо стрелки сделать отдельными нодами, это точно
+			-- возможно придётся и деления делать отдельными нодами. Их всего 10, на производительность не должно же сильно повлиять?
+			-- по крайней мере сделать пока и добавить тудушку - придумать способ легче
+			-- а ещё то же самое надо сделать с селектами
 
 			-- не будет работать если у self.texture pivot не будет центром
 			if action.x < pos.x then
