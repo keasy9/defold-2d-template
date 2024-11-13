@@ -8,7 +8,7 @@ textures {
 }
 nodes {
   size {
-    x: 400.0
+    x: 500.0
     y: 50.0
   }
   color {
@@ -35,7 +35,7 @@ nodes {
     y: 0.4
   }
   size {
-    x: 1000.0
+    x: 1250.0
     y: 100.0
   }
   color {

@@ -23,7 +23,7 @@ nodes {
     y: -66.0
   }
   size {
-    x: 400.0
+    x: 500.0
     y: 50.0
   }
   color {
@@ -39,7 +39,7 @@ nodes {
 }
 nodes {
   position {
-    x: 205.0
+    x: 253.0
     y: 3.0
   }
   type: TYPE_TEMPLATE
@@ -50,11 +50,11 @@ nodes {
 }
 nodes {
   position {
-    x: -100.0
+    x: -123.0
     y: -3.0
   }
   size {
-    x: 190.0
+    x: 240.0
     y: 50.0
   }
   type: TYPE_BOX
@@ -90,13 +90,17 @@ nodes {
   template: "/guiTemplates/button.gui"
 }
 nodes {
+  position {
+    x: -25.0
+  }
   size {
-    x: 190.0
+    x: 240.0
     y: 50.0
   }
   type: TYPE_BOX
   id: "backButton/button"
   parent: "backButton"
+  overridden_fields: 1
   overridden_fields: 4
   template_node_child: true
 }
@@ -156,6 +160,65 @@ nodes {
   type: TYPE_BOX
   id: "soundSlider/texture"
   parent: "soundSlider/slider"
+  template_node_child: true
+}
+nodes {
+  position {
+    y: 64.0
+  }
+  type: TYPE_TEMPLATE
+  id: "resolutionSelect"
+  parent: "menu"
+  inherit_alpha: true
+  template: "/guiTemplates/select.gui"
+}
+nodes {
+  type: TYPE_BOX
+  id: "resolutionSelect/container"
+  parent: "resolutionSelect"
+  template_node_child: true
+}
+nodes {
+  scale {
+    x: 0.3
+    y: 0.3
+  }
+  type: TYPE_TEXT
+  text: "RESOLUTION"
+  id: "resolutionSelect/label"
+  parent: "resolutionSelect/container"
+  overridden_fields: 3
+  overridden_fields: 8
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
+  id: "resolutionSelect/slider"
+  parent: "resolutionSelect/container"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
+  id: "resolutionSelect/texture"
+  parent: "resolutionSelect/slider"
+  template_node_child: true
+}
+nodes {
+  scale {
+    x: 0.25
+    y: 0.25
+  }
+  size {
+    x: 570.0
+    y: 230.0
+  }
+  type: TYPE_TEXT
+  text: "1280 x 720"
+  id: "resolutionSelect/text"
+  parent: "resolutionSelect/slider"
+  overridden_fields: 3
+  overridden_fields: 4
+  overridden_fields: 8
   template_node_child: true
 }
 material: "/builtins/materials/gui.material"

@@ -7,6 +7,7 @@ function M.init(self)
 		-- defaults
 		
 		sound = 0.5,
+		resolution = '1280 x 720',
 	})
 end
 

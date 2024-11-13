@@ -41,7 +41,7 @@ nodes {
   type: TYPE_TEXT
   text: "<text>"
   font: "gui"
-  id: "text"
+  id: "label"
   parent: "container"
   inherit_alpha: true
 }
@@ -53,43 +53,14 @@ nodes {
     x: 250.0
     y: 50.0
   }
+  color {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
   type: TYPE_BOX
   id: "slider"
   parent: "container"
-  inherit_alpha: true
-  size_mode: SIZE_MODE_AUTO
-}
-nodes {
-  position {
-    x: -84.0
-  }
-  size {
-    x: 167.0
-    y: 50.0
-  }
-  type: TYPE_BOX
-  id: "backdrop"
-  pivot: PIVOT_W
-  parent: "slider"
-  inherit_alpha: true
-  size_mode: SIZE_MODE_AUTO
-}
-nodes {
-  position {
-    x: -84.0
-  }
-  size {
-    x: 167.0
-    y: 40.0
-  }
-  color {
-    y: 0.0
-    z: 0.4
-  }
-  type: TYPE_BOX
-  id: "filler"
-  pivot: PIVOT_W
-  parent: "slider"
   inherit_alpha: true
   size_mode: SIZE_MODE_AUTO
 }
@@ -105,6 +76,29 @@ nodes {
   type: TYPE_BOX
   texture: "gui/slider"
   id: "texture"
+  parent: "slider"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    y: -4.0
+  }
+  scale {
+    x: 0.3
+    y: 0.3
+  }
+  size {
+    x: 600.0
+    y: 190.0
+  }
+  color {
+    y: 0.0
+    z: 0.4
+  }
+  type: TYPE_TEXT
+  text: "<text>"
+  font: "gui"
+  id: "text"
   parent: "slider"
   inherit_alpha: true
 }
