@@ -53,6 +53,11 @@ nodes {
     x: 250.0
     y: 50.0
   }
+  color {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
   type: TYPE_BOX
   id: "slider"
   parent: "container"
@@ -61,52 +66,205 @@ nodes {
 }
 nodes {
   position {
-    x: -84.0
+    x: -111.0
+  }
+  scale {
+    x: 0.6
+    y: 0.6
   }
   size {
-    x: 167.0
-    y: 50.0
+    x: 45.0
+    y: 80.0
+  }
+  color {
+    y: 0.0
+    z: 0.4
+  }
+  type: TYPE_TEXT
+  text: "<"
+  font: "gui"
+  id: "prevButton"
+  parent: "slider"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 111.0
+  }
+  scale {
+    x: -0.6
+    y: 0.6
+  }
+  size {
+    x: 45.0
+    y: 80.0
+  }
+  color {
+    y: 0.0
+    z: 0.4
+  }
+  type: TYPE_TEXT
+  text: "<"
+  font: "gui"
+  id: "nextButton"
+  parent: "slider"
+  inherit_alpha: true
+}
+nodes {
+  size {
+    x: 190.0
+    y: 30.0
+  }
+  color {
+    x: 0.0
+    y: 0.0
+    z: 0.0
   }
   type: TYPE_BOX
-  id: "backdrop"
-  pivot: PIVOT_W
+  id: "body"
   parent: "slider"
   inherit_alpha: true
   size_mode: SIZE_MODE_AUTO
 }
 nodes {
   position {
-    x: -84.0
+    x: -90.0
   }
   size {
-    x: 167.0
-    y: 40.0
-  }
-  color {
-    y: 0.0
-    z: 0.4
+    x: 10.0
+    y: 30.0
   }
   type: TYPE_BOX
-  id: "filler"
-  pivot: PIVOT_W
-  parent: "slider"
+  id: "opt1"
+  parent: "body"
   inherit_alpha: true
   size_mode: SIZE_MODE_AUTO
 }
 nodes {
-  size {
-    x: 250.0
-    y: 50.0
+  position {
+    x: -70.0
   }
-  color {
-    y: 0.0
-    z: 0.4
+  size {
+    x: 10.0
+    y: 30.0
   }
   type: TYPE_BOX
-  texture: "gui/slider"
-  id: "texture"
-  parent: "slider"
+  id: "opt2"
+  parent: "body"
   inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: -50.0
+  }
+  size {
+    x: 10.0
+    y: 30.0
+  }
+  type: TYPE_BOX
+  id: "opt3"
+  parent: "body"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: -30.0
+  }
+  size {
+    x: 10.0
+    y: 30.0
+  }
+  type: TYPE_BOX
+  id: "opt4"
+  parent: "body"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: -10.0
+  }
+  size {
+    x: 10.0
+    y: 30.0
+  }
+  type: TYPE_BOX
+  id: "opt5"
+  parent: "body"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 10.0
+  }
+  size {
+    x: 10.0
+    y: 30.0
+  }
+  type: TYPE_BOX
+  id: "opt6"
+  parent: "body"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 30.0
+  }
+  size {
+    x: 10.0
+    y: 30.0
+  }
+  type: TYPE_BOX
+  id: "opt7"
+  parent: "body"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 50.0
+  }
+  size {
+    x: 10.0
+    y: 30.0
+  }
+  type: TYPE_BOX
+  id: "opt8"
+  parent: "body"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 70.0
+  }
+  size {
+    x: 10.0
+    y: 30.0
+  }
+  type: TYPE_BOX
+  id: "opt9"
+  parent: "body"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 90.0
+  }
+  size {
+    x: 10.0
+    y: 30.0
+  }
+  type: TYPE_BOX
+  id: "opt10"
+  parent: "body"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
 }
 material: "/builtins/materials/gui.material"
 adjust_reference: ADJUST_REFERENCE_PARENT

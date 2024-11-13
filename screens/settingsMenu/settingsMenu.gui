@@ -148,21 +148,81 @@ nodes {
   template_node_child: true
 }
 nodes {
-  type: TYPE_BOX
-  id: "soundSlider/backdrop"
+  type: TYPE_TEXT
+  id: "soundSlider/prevButton"
+  parent: "soundSlider/slider"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_TEXT
+  id: "soundSlider/nextButton"
   parent: "soundSlider/slider"
   template_node_child: true
 }
 nodes {
   type: TYPE_BOX
-  id: "soundSlider/filler"
+  id: "soundSlider/body"
   parent: "soundSlider/slider"
   template_node_child: true
 }
 nodes {
   type: TYPE_BOX
-  id: "soundSlider/texture"
-  parent: "soundSlider/slider"
+  id: "soundSlider/opt1"
+  parent: "soundSlider/body"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
+  id: "soundSlider/opt2"
+  parent: "soundSlider/body"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
+  id: "soundSlider/opt3"
+  parent: "soundSlider/body"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
+  id: "soundSlider/opt4"
+  parent: "soundSlider/body"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
+  id: "soundSlider/opt5"
+  parent: "soundSlider/body"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
+  id: "soundSlider/opt6"
+  parent: "soundSlider/body"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
+  id: "soundSlider/opt7"
+  parent: "soundSlider/body"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
+  id: "soundSlider/opt8"
+  parent: "soundSlider/body"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
+  id: "soundSlider/opt9"
+  parent: "soundSlider/body"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
+  id: "soundSlider/opt10"
+  parent: "soundSlider/body"
   template_node_child: true
 }
 nodes {
