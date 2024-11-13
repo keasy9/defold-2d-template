@@ -201,12 +201,6 @@ nodes {
   template_node_child: true
 }
 nodes {
-  type: TYPE_BOX
-  id: "resolutionSelect/texture"
-  parent: "resolutionSelect/slider"
-  template_node_child: true
-}
-nodes {
   scale {
     x: 0.25
     y: 0.25
@@ -222,6 +216,18 @@ nodes {
   overridden_fields: 3
   overridden_fields: 4
   overridden_fields: 8
+  template_node_child: true
+}
+nodes {
+  type: TYPE_TEXT
+  id: "resolutionSelect/prevButton"
+  parent: "resolutionSelect/slider"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_TEXT
+  id: "resolutionSelect/nextButton"
+  parent: "resolutionSelect/slider"
   template_node_child: true
 }
 nodes {

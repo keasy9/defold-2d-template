@@ -34,27 +34,20 @@ local function getNextValue(m)
 end
 
 function M.onInput(self, actionId, action)
-	if
-		actionId == hash("touch")
-		and action.pressed
-		and not gui.pick_node(self.text, action.x, action.y)
-		and gui.pick_node(self.texture, action.x, action.y)
-	then
-		local pos = gui.get_screen_position(self.texture);
-
-		-- не будет работать если у self.texture pivot не будет центром
-		if action.x < pos.x then
+	if actionId == hash("touch") and action.pressed then
+		if gui.pick_node(self.prev, action.x, action.y) then
 			self:setValue(getPreviousValue(self))
-		else
+		elseif gui.pick_node(self.next, action.x, action.y) then
 			self:setValue(getNextValue(self))
 		end
 	end
 end
 
-function M.create(node, options, textNodeName, textureNodeName)
+function M.create(node, options, textNodeName, prevNodeName, nextNodeName)
 	local sld = setmetatable({
 		text = gui.get_node(hash(node .. '/' .. (textNodeName or 'text'))),
-		texture = gui.get_node(hash(node .. '/' .. (textureNodeName or 'texture'))),
+		prev = gui.get_node(hash(node .. '/' .. (prevNodeName or 'prevButton'))),
+		next = gui.get_node(hash(node .. '/' .. (nextNodeName or 'nextButton'))),
 		onChange = nil,
 		value = nil,
 		options = options,
