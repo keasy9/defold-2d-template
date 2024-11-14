@@ -15,13 +15,21 @@ local function paintOpts(m)
 			gui.set_color(opt, vmath.vector4(1,1,1, 1))
 		end
 	end
+
+	if m.sound then
+		sound.stop(m.sound)
+		sound.play(m.sound, {gain = SETTINGS:load()['sound'], pan = m.value * 2 - 1})
+	end
 end
 
 local function setValueByTouch(m, actionId, action)
 	-- todo придумать как кликом по телу слайдера установить 0. Псевдоопция?
 	for i, opt in ipairs(m.opts) do
 		if gui.pick_node(opt, action.x, action.y) then
-			m:setValue(i * 0.1)
+			local value = i * 0.1
+			if value ~= m:getValue() then
+				m:setValue(i * 0.1)
+			end
 			return true
 		end
 	end
@@ -87,6 +95,12 @@ end
 
 function M.getValue(self)
 	return self.value;
+end
+
+function M.setSound(self, sound)
+	self.sound = sound
+
+	return self;
 end
 
 return M;

@@ -36,8 +36,14 @@ end
 function M.onInput(self, actionId, action)
 	if actionId == hash("touch") and action.pressed then
 		if gui.pick_node(self.prev, action.x, action.y) then
+			if self.sound then
+				sound.play(self.sound, {gain = SETTINGS:load()['sound']})
+			end
 			self:setValue(getPreviousValue(self))
 		elseif gui.pick_node(self.next, action.x, action.y) then
+			if self.sound then
+				sound.play(self.sound, {gain = SETTINGS:load()['sound']})
+			end
 			self:setValue(getNextValue(self))
 		end
 	end
@@ -81,6 +87,12 @@ end
 
 function M.getValue(self)
 	return self.value;
+end
+
+function M.setSound(self, sound)
+	self.sound = sound
+
+	return self;
 end
 
 return M;

@@ -8,6 +8,10 @@ local function toggle(m)
 		m.color = gui.get_color(m.box)
 	end
 
+	if m.sound then
+		sound.play(m.sound, {gain = SETTINGS:load()['sound']})
+	end
+
 	gui.play_flipbook(m.box, m.value and fill or border)
 end
 
@@ -52,6 +56,12 @@ end
 
 function M.getValue(self, value)
 	return self.value
+end
+
+function M.setSound(self, sound)
+	self.sound = sound
+
+	return self;
 end
 
 return M;

@@ -8,6 +8,10 @@ local function onHover(m)
 		m.color = gui.get_color(m.btn)
 	end
 
+	if m.hovered and m.sound then
+		sound.play(m.sound, {gain = SETTINGS:load()['sound']})
+	end
+
 	gui.set_color(m.text, m.hovered and vmath.vector4(0,0,0,1) or m.color)
 	gui.play_flipbook(m.btn, m.hovered and fill or border)
 end
@@ -46,6 +50,12 @@ end
 
 function M.setOnClick(self, onClick)
 	self.onClick = onClick
+
+	return self;
+end
+
+function M.setSound(self, sound)
+	self.sound = sound
 
 	return self;
 end

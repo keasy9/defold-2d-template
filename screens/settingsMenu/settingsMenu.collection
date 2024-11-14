@@ -6,5 +6,12 @@ embedded_instances {
   "  id: \"settingsMenu\"\n"
   "  component: \"/screens/settingsMenu/settingsMenu.gui\"\n"
   "}\n"
+  "embedded_components {\n"
+  "  id: \"sound\"\n"
+  "  type: \"sound\"\n"
+  "  data: \"sound: \\\"/assets/sounds/glitch-short.wav\\\"\\n"
+  "group: \\\"gui\\\"\\n"
+  "\"\n"
+  "}\n"
   ""
 }

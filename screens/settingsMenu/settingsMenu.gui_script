@@ -17,15 +17,15 @@ function init(self)
 	fullScreen = settings['fullScreen']
 
 	self.elems = {
-		back = btn.create('backButton'):setOnClick(function (s, action) SCREEN.show('mainMenuProxy') end),
+		back = btn.create('backButton'):setOnClick(function (s, action) SCREEN.show('mainMenuProxy') end):setSound('#sound'),
 		save = btn.create('saveButton'):setOnClick(function (s, action) SETTINGS:save({
 			sound = self.elems.sound:getValue(),
 			resolution = self.elems.res:getValue(),
 			fullScreen = self.elems.screen:getValue(),
-		}) end),
-		sound = sld.create('soundSlider'):setValue(sound),
-		res = slt.create('resolutionSelect', {'1280 x 720', '1980 x 1280'}):setValue(resolution),
-		screen = cbx.create('fullScreenCheckbox'):setValue(fullScreen)
+		}) end):setSound('#sound'),
+		sound = sld.create('soundSlider'):setValue(sound):setSound('#sound'),
+		res = slt.create('resolutionSelect', {'1280 x 720', '1980 x 1280'}):setValue(resolution):setSound('#sound'),
+		screen = cbx.create('fullScreenCheckbox'):setValue(fullScreen):setSound('#sound'),
 	}
 end
 
