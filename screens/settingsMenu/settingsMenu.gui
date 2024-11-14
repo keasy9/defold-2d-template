@@ -227,7 +227,7 @@ nodes {
 }
 nodes {
   position {
-    y: 38.0
+    y: 108.0
   }
   type: TYPE_TEMPLATE
   id: "resolutionSelect"
@@ -292,7 +292,7 @@ nodes {
 }
 nodes {
   position {
-    y: 100.0
+    y: 179.0
   }
   type: TYPE_TEMPLATE
   id: "fullScreenCheckbox"
@@ -318,6 +318,114 @@ nodes {
   type: TYPE_BOX
   id: "fullScreenCheckbox/box"
   parent: "fullScreenCheckbox/container"
+  template_node_child: true
+}
+nodes {
+  position {
+    y: 41.0
+  }
+  type: TYPE_TEMPLATE
+  id: "musicSlider"
+  parent: "menu"
+  inherit_alpha: true
+  template: "/guiTemplates/slider.gui"
+}
+nodes {
+  type: TYPE_BOX
+  id: "musicSlider/container"
+  parent: "musicSlider"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_TEXT
+  text: "MUSIC"
+  id: "musicSlider/text"
+  parent: "musicSlider/container"
+  overridden_fields: 8
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
+  id: "musicSlider/slider"
+  parent: "musicSlider/container"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_TEXT
+  id: "musicSlider/prevButton"
+  parent: "musicSlider/slider"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_TEXT
+  id: "musicSlider/nextButton"
+  parent: "musicSlider/slider"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
+  id: "musicSlider/body"
+  parent: "musicSlider/slider"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
+  id: "musicSlider/opt1"
+  parent: "musicSlider/body"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
+  id: "musicSlider/opt2"
+  parent: "musicSlider/body"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
+  id: "musicSlider/opt3"
+  parent: "musicSlider/body"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
+  id: "musicSlider/opt4"
+  parent: "musicSlider/body"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
+  id: "musicSlider/opt5"
+  parent: "musicSlider/body"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
+  id: "musicSlider/opt6"
+  parent: "musicSlider/body"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
+  id: "musicSlider/opt7"
+  parent: "musicSlider/body"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
+  id: "musicSlider/opt8"
+  parent: "musicSlider/body"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
+  id: "musicSlider/opt9"
+  parent: "musicSlider/body"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
+  id: "musicSlider/opt10"
+  parent: "musicSlider/body"
   template_node_child: true
 }
 material: "/builtins/materials/gui.material"

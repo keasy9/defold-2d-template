@@ -6,6 +6,7 @@ local cbx = require('modules.gui.checkbox')
 local sound = nil
 local resolution = nil
 local fullScreen = nil
+local music = nil
 
 function init(self)
 	msg.post('.', 'acquire_input_focus')
@@ -13,17 +14,20 @@ function init(self)
 	local settings = SETTINGS:load()
 
 	sound = settings['sound']
+	music = settings['music']
 	resolution = settings['resolution']
 	fullScreen = settings['fullScreen']
 
 	self.elems = {
 		back = btn.create('backButton'):setOnClick(function (s, action) SCREEN.show('mainMenuProxy') end):setSound('#sound'),
-		save = btn.create('saveButton'):setOnClick(function (s, action) SETTINGS:save({
+		save = btn.create('saveButton'):setOnClick(function (s, action) SETTINGS:apply({
 			sound = self.elems.sound:getValue(),
+			music = self.elems.music:getValue(),
 			resolution = self.elems.res:getValue(),
 			fullScreen = self.elems.screen:getValue(),
 		}) end):setSound('#sound'),
 		sound = sld.create('soundSlider'):setValue(sound):setSound('#sound'),
+		music = sld.create('musicSlider'):setValue(music):setSound('#sound'),
 		res = slt.create('resolutionSelect', {'1280 x 720', '1980 x 1280'}):setValue(resolution):setSound('#sound'),
 		screen = cbx.create('fullScreenCheckbox'):setValue(fullScreen):setSound('#sound'),
 	}
@@ -34,6 +38,7 @@ function on_input(self, actionId, action)
 		self.elems.back:onInput(actionId, action)
 		self.elems.save:onInput(actionId, action)
 		self.elems.sound:onInput(actionId, action)
+		self.elems.music:onInput(actionId, action)
 		self.elems.res:onInput(actionId, action)
 		self.elems.screen:onInput(actionId, action)
 	end

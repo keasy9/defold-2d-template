@@ -9,7 +9,6 @@ local function paintOpts(m)
 
 	for i, opt in ipairs(m.opts) do
 		if i <= opts then
-			print(m.color)
 			gui.set_color(opt, m.color)
 		else
 			gui.set_color(opt, vmath.vector4(1,1,1, 1))
