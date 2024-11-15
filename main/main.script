@@ -20,7 +20,7 @@ function init(self)
 	SETTINGS:apply()
 
 	self.currentProxy = nil
-	SCREEN.show('mainMenuProxy')
+	SCREEN.show('introProxy')
 end
 
 function on_message(self, messageId, message, sender)

@@ -7,7 +7,4 @@ images {
 images {
   image: "/assets/images/fill.png"
 }
-images {
-  image: "/assets/images/slider.png"
-}
 extrude_borders: 2

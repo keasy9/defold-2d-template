@@ -1,0 +1,22 @@
+name: "intro"
+scale_along_z: 0
+embedded_instances {
+  id: "controller"
+  data: "components {\n"
+  "  id: \"intro\"\n"
+  "  component: \"/screens/intro/intro.gui\"\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"long\"\n"
+  "  type: \"sound\"\n"
+  "  data: \"sound: \\\"/assets/sounds/glitch-long.wav\\\"\\n"
+  "\"\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"short\"\n"
+  "  type: \"sound\"\n"
+  "  data: \"sound: \\\"/assets/sounds/glitch-short.wav\\\"\\n"
+  "\"\n"
+  "}\n"
+  ""
+}

@@ -1,0 +1,51 @@
+local step = 0;
+
+local function animate()
+	local defold = gui.get_node(hash('defold')) -- todo почему лого рваное? попробовать другие картинки
+	local game = gui.get_node(hash('game'))
+	step =  step + 1
+	
+	if step == 1 then
+		gui.set_enabled(game, false)
+		gui.set_enabled(defold, true)
+		gui.animate(defold, 'color.w', 1, gui.EASING_INOUTSINE, 0.3, 0.2, animate)
+		timer.delay(0.2, false, function() 
+			sound.play('#long', {gain = SETTINGS:load()['sound']})
+		end)
+		
+	elseif step == 2 then
+		gui.animate(defold, 'color.w', 0, gui.EASING_INOUTSINE, 0.3, 1, animate)
+		
+	elseif step == 3 then
+		gui.set_enabled(defold, false)
+		gui.set_enabled(game, true)
+		
+		local cool = gui.get_node(hash('cool'))
+		gui.animate(cool, 'color.w', 1, gui.EASING_INOUTSINE, 0.5, 0)
+		gui.animate(cool, 'position.y', 49, gui.EASING_INOUTSINE, 0.3, 0, animate)
+		sound.play('#short', {gain = SETTINGS:load()['sound']})
+
+	elseif step == 4 then
+		local twoD = gui.get_node(hash('2d'))
+		gui.animate(twoD, 'color.w', 1, gui.EASING_INOUTSINE, 0.5, 0)
+		gui.animate(twoD, 'position.x', -219, gui.EASING_INOUTSINE, 0.3, 0, animate)
+		sound.play('#short', {gain = SETTINGS:load()['sound']})
+		
+	elseif step == 5 then
+		local indie = gui.get_node(hash('indie'))
+		gui.animate(indie, 'color.w', 1, gui.EASING_INOUTSINE, 0.5, 0)
+		gui.animate(indie, 'position.y', -50, gui.EASING_INOUTSINE, 0.3, 0, animate)
+		sound.play('#short', {gain = SETTINGS:load()['sound']})
+
+	elseif step == 6 then
+		gui.animate(game, 'color.w', 0, gui.EASING_INOUTSINE, 0.3, 0.5, animate)
+		
+	elseif step == 7 then
+		SCREEN.show('mainMenuProxy')
+		sound.play('#short', {gain = SETTINGS:load()['sound']})
+	end
+end
+
+function init(self)
+	animate()
+end
