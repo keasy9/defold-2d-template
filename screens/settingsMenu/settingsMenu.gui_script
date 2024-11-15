@@ -19,7 +19,7 @@ function init(self)
 	fullScreen = settings['fullScreen']
 
 	self.elems = {
-		back = btn.create('backButton'):setOnClick(function (s, action) SCREEN.show('mainMenuProxy') end):setSound('#sound'),
+		back = btn.create('backButton'):setOnClick(function (s, action) SCREEN:show('mainMenuProxy') end):setSound('#sound'),
 		save = btn.create('saveButton'):setOnClick(function (s, action) SETTINGS:apply({
 			sound = self.elems.sound:getValue(),
 			music = self.elems.music:getValue(),

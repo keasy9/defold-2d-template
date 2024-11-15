@@ -41,7 +41,7 @@ local function animate()
 		gui.animate(game, 'color.w', 0, gui.EASING_INOUTSINE, 0.3, 0.5, animate)
 		
 	elseif step == 7 then
-		SCREEN.show('mainMenuProxy')
+		SCREEN:show('mainMenuProxy')
 		sound.play('#short', {gain = SETTINGS:load()['sound']})
 	end
 end

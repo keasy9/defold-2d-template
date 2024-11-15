@@ -4,8 +4,8 @@ function init(self)
 	msg.post('.', 'acquire_input_focus')
 
 	self.btns = {
-		play = btn.create('playButton'):setSound('#sound'),
-		settings = btn.create('settingsButton'):setOnClick(function (s, action) SCREEN.show('settingsProxy') end):setSound('#sound'),
+		play = btn.create('playButton'):setOnClick(function() SCREEN:unload():loader(true) end):setSound('#sound'),
+		settings = btn.create('settingsButton'):setOnClick(function (s, action) SCREEN:show('settingsProxy') end):setSound('#sound'),
 		exit = btn.create('exitButton'):setOnClick(function (s, action) msg.post("@system:", "exit", {code = 0}) end):setSound('#sound'),
 	}
 end

@@ -1,0 +1,163 @@
+script: "/main/loader.gui_script"
+nodes {
+  position {
+    x: 640.0
+    y: 360.0
+  }
+  size {
+    x: 1280.0
+    y: 720.0
+  }
+  color {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  type: TYPE_BOX
+  id: "background"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+  enabled: false
+}
+nodes {
+  size {
+    x: 200.0
+    y: 200.0
+  }
+  color {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  type: TYPE_BOX
+  id: "loader"
+  parent: "background"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    y: 95.0
+  }
+  size {
+    x: 50.0
+    y: 10.0
+  }
+  color {
+    y: 0.0
+    z: 0.4
+  }
+  type: TYPE_BOX
+  id: "segment1"
+  parent: "loader"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 95.0
+  }
+  size {
+    x: 10.0
+    y: 50.0
+  }
+  color {
+    x: 0.214
+    y: 0.0
+    z: 0.085
+  }
+  type: TYPE_BOX
+  id: "segment2"
+  parent: "loader"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: -95.0
+  }
+  size {
+    x: 10.0
+    y: 50.0
+  }
+  color {
+    x: 0.416
+    y: 0.0
+    z: 0.165
+  }
+  type: TYPE_BOX
+  id: "segment"
+  parent: "loader"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 67.0
+    y: 67.0
+  }
+  rotation {
+    z: 45.0
+  }
+  size {
+    x: 10.0
+    y: 50.0
+  }
+  color {
+    x: 0.416
+    y: 0.0
+    z: 0.165
+  }
+  type: TYPE_BOX
+  id: "segment3"
+  parent: "loader"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: -67.0
+    y: 67.0
+  }
+  rotation {
+    z: 45.0
+  }
+  size {
+    x: 50.0
+    y: 10.0
+  }
+  color {
+    y: 0.0
+    z: 0.4
+  }
+  type: TYPE_BOX
+  id: "segment4"
+  parent: "loader"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: -67.0
+    y: -67.0
+  }
+  rotation {
+    z: 45.0
+  }
+  size {
+    x: 10.0
+    y: 50.0
+  }
+  color {
+    x: 0.216
+    y: 0.0
+    z: 0.086
+  }
+  type: TYPE_BOX
+  id: "segment5"
+  parent: "loader"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+material: "/builtins/materials/gui.material"
+adjust_reference: ADJUST_REFERENCE_PARENT

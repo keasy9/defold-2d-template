@@ -10,6 +10,7 @@ local function show(self, proxy)
 
 	self.currentProxy = '#' .. proxy
 	msg.post(self.currentProxy, 'async_load')
+	self.timer = timer.delay(0.5, false, function() SCREEN:loader(true) end)
 end
 
 function init(self)
@@ -19,15 +20,24 @@ function init(self)
 
 	SETTINGS:apply()
 
+	self.timer = nil
 	self.currentProxy = nil
-	SCREEN.show('introProxy')
+	SCREEN:show('introProxy')
 end
 
 function on_message(self, messageId, message, sender)
 	if messageId == hash('proxy_loaded') then
 		msg.post(sender, 'init')
+		timer.cancel(self.timer)
+		SCREEN:loader(false)
 		msg.post(sender, 'enable')
+
 	elseif messageId == hash('load_proxy') then
 		show(self, message.proxy)
+
+	elseif messageId == hash('unload_proxy') then
+		msg.post(self.currentProxy, 'disable')
+		msg.post(self.currentProxy, 'final')
+		msg.post(self.currentProxy, 'unload')
 	end
 end

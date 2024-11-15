@@ -1,0 +1,33 @@
+local function animate(self)
+	self.angle = self.angle + 45
+	if self.angle == 360 then self.angle = 0 end
+
+	gui.set_rotation(self.loader, vmath.vector4(0, 0, self.angle, 0))
+
+	if self.animation then
+		timer.delay(0.07, false, function () animate(self) end)
+	end
+end
+
+function init(self)
+	self.loader = gui.get_node('loader')
+	self.background = gui.get_node('background')
+	self.angle = 0
+end
+
+function on_message(self, messageId, message, sender)
+	if messageId == hash('start') then
+		gui.set_enabled(self.background, true)
+		gui.set(self.background, 'color.w', 0)
+		gui.animate(self.background, 'color.w', 1, gui.EASING_INOUTBACK, 0.2)
+
+		self.animation = true
+		animate(self)
+		
+	elseif messageId == hash('stop') then
+		gui.set_enabled(self.background, false)
+		gui.set(self.background, 'color.w', 0)
+
+		self.animation = false
+	end
+end
