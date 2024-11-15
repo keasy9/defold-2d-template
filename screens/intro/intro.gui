@@ -51,6 +51,10 @@ nodes {
     x: 0.5
     y: 0.5
   }
+  size {
+    x: 320.0
+    y: 310.0
+  }
   color {
     y: 0.0
     z: 0.4
@@ -60,7 +64,6 @@ nodes {
   id: "logo"
   parent: "defold"
   inherit_alpha: true
-  size_mode: SIZE_MODE_AUTO
 }
 nodes {
   position {
@@ -125,6 +128,7 @@ nodes {
   parent: "background"
   inherit_alpha: true
   size_mode: SIZE_MODE_AUTO
+  enabled: false
 }
 nodes {
   position {
